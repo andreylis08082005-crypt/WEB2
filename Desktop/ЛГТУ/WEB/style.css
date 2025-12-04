@@ -1,0 +1,139 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    color: #333;
+    display: flex;
+    flex-direction: column; 
+    height: 100vh; 
+    background-color: #f8f9fa; 
+}
+
+.global-header {
+    display: flex; 
+    background-color: #ffffff;
+    /* УДАЛЕНО: общая линия */
+    border-bottom: none; 
+    flex-shrink: 0; 
+}
+.header-left {
+    width: 250px; 
+    padding: 15px 20px; 
+    font-size: 18px;
+    font-weight: 600; 
+    box-sizing: border-box; 
+    /* Для выравнивания звезды и текста */
+    display: flex;
+    align-items: center; 
+    gap: 5px; 
+}
+/* ДОБАВЛЕНО: Стили для звезды */
+.header-star {
+    width: 20px; 
+    height: 20px;
+    object-fit: cover; 
+}
+.header-right {
+    flex-grow: 1; 
+    display: flex; 
+    justify-content: space-between;
+    align-items: center; 
+    padding: 15px 30px; 
+    /* ДОБАВЛЕНО: Линия только под правой частью заголовка */
+    border-left: 1px solid #e0e0e0; 
+    border-bottom: 1px solid #e0e0e0;
+}
+/* ИЗМЕНЕНИЕ: Сброс margin для h1 */
+.header-right h1 { 
+    margin: 0; 
+} 
+
+.page-container {
+    display: flex; flex-grow: 1; overflow: hidden; 
+}
+
+.sidebar {
+    width: 250px; 
+    background-color: #f8f9fa; 
+    box-sizing: border-box; 
+    flex-shrink: 0; 
+    display: flex;
+    flex-direction: column; 
+    overflow-y: auto; 
+    /* ИЗМЕНЕНИЕ 1: Установлен padding-top в 20px, чтобы выровнять с .main-content */
+    padding: 20px 20px 20px 20px; 
+}
+.sidebar-search {
+    width: 100%; padding: 8px 12px; border: 1px solid #ccc;
+    border-radius: 6px; box-sizing: border-box; 
+    /* ИЗМЕНЕНИЕ 2: Убран margin-top для начала на линии */
+    margin-bottom: 15px; 
+    margin-top: 0; 
+}
+.sidebar-nav ul { list-style: none; padding: 0; margin: 0; }
+.sidebar-nav li a {
+    display: block; 
+    padding: 8px 20px; 
+    text-decoration: none;
+    color: #333; border-radius: 6px;
+}
+.sidebar-nav li a.active {
+    background-color: #e9ecef; font-weight: 500;
+}
+.sidebar-footer { 
+    margin-top: auto; 
+    font-size: 12px; 
+    color: #888; 
+    padding-top: 15px;
+}
+
+.main-content {
+    /* padding: 20px 30px; — этот padding обеспечивает вертикальное выравнивание */
+    flex-grow: 1; padding: 20px 30px; background-color: #ffffff; 
+    overflow-y: auto; border-left: 1px solid #e0e0e0;
+}
+
+.dropdown-wrapper { position: relative; }
+.dropdown-toggle {
+    padding: 8px 12px; font-size: 14px; color: #333;
+    background-color: #ffffff; border: 1px solid #ddd;
+    border-radius: 6px; cursor: pointer;
+}
+.dropdown-wrapper:hover .dropdown-menu { display: block; }
+.dropdown-menu {
+    display: none; position: absolute; top: 110%; right: 0;
+    background-color: #ffffff; border: 1px solid #ddd;
+    border-radius: 6px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    width: 180px; z-index: 10; padding: 5px 0; 
+}
+.dropdown-menu a {
+    display: block; padding: 8px 15px; text-decoration: none;
+    color: #333; font-size: 14px;
+}
+.dropdown-menu a:hover, .dropdown-menu a.active {
+    background-color: #f8f9fa;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px; 
+}
+
+.card { 
+    background-color: #ffffff; overflow: hidden; border: 1px solid #e0e0e0; 
+    border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.02); 
+    padding: 15px;
+}
+
+.card-meta {
+    display: flex; justify-content: space-between; font-size: 13px; 
+    color: #888; margin-bottom: 10px; margin-top: 0; 
+}
+
+.card-image {
+    width: 100%; height: 180px; background-color: #eee; 
+    object-fit: cover; border-radius: 0; margin-bottom: 0; 
+}
+
+.card-content h3 { font-size: 18px; font-weight: 600; margin: 8px 0; }
+.card-content p { font-size: 14px; color: #555; line-height: 1.5; margin: 0; }
